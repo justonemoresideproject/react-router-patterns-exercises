@@ -1,23 +1,27 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Router } from 'react-router-dom'
 import Dog from './Dog'
+import Dogs from './Dogs'
 
-function Routes(dogs) {
+function Routes({dogs}) {
     return (
-        <switch>
+        <switch >
             {dogs.map(dog => {
-                    return (
-                    <Route exact path={`/${dog.name}`}>
-                        <Dog 
-                        name={dog.name} 
-                        age={dog.age} 
-                        src={dog.src} 
-                        facts={dog.facts}/>
-                    </Route>
-                    )
-                })}
+                return (
+                <Route key={`${dog.id}.route`} exact path={`/dogs/${dog.name}`}>
+                    <Dog 
+                    name={dog.name} 
+                    age={dog.age} 
+                    src={dog.src} 
+                    facts={dog.facts} key={dog.id}/>
+                </Route>
+                )
+            })}
+            <Route><Dogs /></Route>
         </switch>
     )
 }
+
+
 
 export default Routes

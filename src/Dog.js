@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Dog({name, age, pic, facts}) {
+function Dog({name, age, pic, facts, id}) {
 
     return (
         <>

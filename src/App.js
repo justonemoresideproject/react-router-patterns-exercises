@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react'
 import Dogs from './Dogs'
 import Dog from  './Dog'
+import Nav from './Nav'
 import Routes from './Routes'
 import { v4 as uuid } from 'uuid'
 import { BrowserRouter } from 'react-router-dom';
@@ -58,7 +59,7 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
-          <Dogs dogs={dogs}/>
+          <Nav dogs={dogs}/>
           <Routes dogs={dogs}/>
         </BrowserRouter>
       </div>
